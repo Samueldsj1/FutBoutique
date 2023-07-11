@@ -1,0 +1,15 @@
+<div th:replace="shared/header"  xmlns:th="http://www.w3.org/1999/xhtml"></div>
+<main>
+    <section>
+        <h2>Camisas</h2>
+
+        <div th:each="produto : ${produtos}" class="product" xmlns:th="http://www.w3.org/1999/xhtml">
+            <img th:src="@{'/img/img_upload/' + ${produto.imagem}}" alt="img produto" src="" height="800" width="800">
+            <h3 th:text="${produto.description}"></h3>
+            <p><s><span th:text="${produto.price}"></span></s> - R$ 100,00</p>
+            <button type="submit">Comprar</button>
+        </div>
+
+    </section>
+</main>
+<div th:replace="shared/footer" xmlns:th="http://www.w3.org/1999/xhtml"></div>

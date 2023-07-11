@@ -15,8 +15,8 @@ public class HomeController {
     public String sobre(){
         return "sobre/sobre";
     }
-    @GetMapping(value = "/produto")
+    @GetMapping(value = "/catalogo")
     public String produto(){
-        return "camisa/camisas";
+        return "catalogo/index";
     }
 }

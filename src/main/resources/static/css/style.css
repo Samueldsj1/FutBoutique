@@ -126,31 +126,69 @@ footer p {
     width: 100%;
     height: auto;
     margin: 0 auto;
-  }
+    max-width: 600px;
+}
 
+.carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-  .carousel-item img {
-    width: 100%;
+.carousel-item img {
+    max-width: 100%;
     height: auto;
-
-  }
-
-  /* Previous and next controls */
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 5%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    text-align: center;
-  }
-
-  /* Control icons */
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
+}
+form {
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
     background-color: #fff;
-  }
+    border-radius: 5px;
+}
 
-  /* Active slide indicator */
-  .carousel-indicators .active {
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form textarea {
+    height: 80px;
+}
+
+form input[type="submit"] {
     background-color: #000;
-  }
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #333;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.success-message {
+    color: green;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
