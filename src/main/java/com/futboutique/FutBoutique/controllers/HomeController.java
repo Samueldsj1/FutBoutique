@@ -16,7 +16,25 @@ public class HomeController {
         return "sobre/sobre";
     }
     @GetMapping(value = "/catalogo")
-    public String produto(){
-        return "catalogo/index";
+    public String catalogoProduto(){
+        return "catalogo/listaProduto";
     }
+    @GetMapping("registroProduto")
+    public String indexcadastroProduto() {
+        return "catalogo/cadastroProduto";
+    }
+    @GetMapping(value = "/loginUser")
+    public String loginUser(){
+        return "login/login";
+    }
+    @GetMapping(value = "/cadastroUser")
+    public String cadastroUser(){
+        return "login/cadastro";
+    }
+
+    @GetMapping(value = "/usuario")
+    public String usuarios(){
+        return "login/usuarios";
+    }
+
 }

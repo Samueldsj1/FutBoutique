@@ -21,7 +21,7 @@ public class ProdutoModel {
     private String size;
     @Column
     @NotNull
-    private Double price;
+    private String price;
     @Column
     @NotNull
     private Integer qtd;
@@ -63,11 +63,11 @@ public class ProdutoModel {
         this.size = size;
     }
 
-    public Double getPrice() {
+    public String  getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

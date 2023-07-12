@@ -1,0 +1,33 @@
+<div th:replace="shared/header" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+<section class="boxLogin container">
+    <div class="content">
+
+        <form class="row g-3" action="/produto/cadastrarProduto" method="post" onsubmit="alert('Cadastrado com sucesso!')">
+            <h1><i class="icon icon-key-1"></i> Register Product</h1>
+            <div class="padding">
+                <label>
+                    <input type="text" class="campos" placeholder="Club: " name="club">
+                </label>
+                <label>
+                    <input type="text" class="campos" placeholder="size: " name="size">
+                </label>
+                <label>
+                    <input type="text" class="campos" placeholder="amount: " name="qtd">
+                </label>
+                <label>
+                    <input type="text" class="campos" placeholder="price: " name="price">
+                </label>
+                <label>
+                    <input type="text" class="campos" placeholder="Description: " name="description">
+                </label>
+                <label>
+                    <input type="text" class="campos" placeholder="Imagem: "  name="imagem">
+                </label>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary" > Cadastrar </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<div th:replace="shared/footer" xmlns:th="http://www.w3.org/1999/xhtml"></div>

@@ -1,0 +1,27 @@
+<div th:replace="shared/header" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+<section class="boxLogin container">
+    <div class="content">
+
+        <form class="user" action="/logar" method="post">
+            <h1><i class="icon icon-key-1"></i> Login</h1>
+            <br>
+            <div class="padding">
+                <label>
+                    <input type="text" class="campos" placeholder="E-mail" name="email">
+                </label>
+                <label>
+                    <input type="password" class="campos" placeholder="Password"  name="password">
+                </label>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary" > Login </button>
+                </div>
+
+            </div>
+            <div class="linksForm">
+                Não tem conta?
+                <a href="/cadastroUser" class="fade_4S" title="Cadastrar-se"><i class="icon icon-user-add"></i> Cadastrar-se</a>
+            </div>
+        </form>
+    </div>
+</section>
+<div th:replace="shared/footer" xmlns:th="http://www.w3.org/1999/xhtml"></div>
