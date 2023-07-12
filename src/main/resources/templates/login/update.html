@@ -1,0 +1,27 @@
+<div th:replace="shared/header"  xmlns:th="http://www.w3.org/1999/xhtml"></div>
+<section class="boxLogin container">
+    <div class="content" xmlns:th="http://www.w3.org/1999/xhtml">
+
+        <form class="row g-3" th:action="@{'/usuarios/alterar/' + ${user.id}}" method="post" onsubmit="alert('Alterado com sucesso!')">
+            <h1><i class="icon icon-key-1"></i> Formulario Alteração de Cadastro</h1>
+            <div class="padding">
+                <label>
+                    <input type="text" th:value="$user.name}"  name="name" class="campos" placeholder="Nome Completo">
+                </label>
+                <label>
+                    <input type="text" th:value="$user.cpf}"  name="cpf" class="campos" placeholder="CPF">
+                </label>
+                <label>
+                    <input type="text" th:value="$user.email}"  name="name" class="campos" placeholder="Email">
+                </label>
+                <label>
+                    <input type="text" th:value="$user.password}"  name="name" class="campos" placeholder="Password">
+                </label>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary"> Alterar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<div th:replace="shared/footer" xmlns:th="http://www.w3.org/1999/xhtml"></div>

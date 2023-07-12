@@ -27,6 +27,8 @@
                         <td th:text="${user.name}"></td>
                         <td th:text="${user.cpf}"></td>
                         <td th:text="${user.email}"></td>
+                        <td> <a th:href="@{'/usuarios/' + ${user.id}}" class="btn btn-warning">Alterar</a> </td>
+                        <td> <a th:href="@{/usuarios/delete/__${user.id}__}" onclick="return confirm('Tem certeza que deseja excluir o registro?')" class="btn btn-danger">Excluir</a></td>
                     </tr>
                     </tbody>
                 </table>

@@ -1,6 +1,6 @@
-<div th:replace="shared/header" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+<div th:replace="shared/header" xmlns:th="http://www.w3.org/1999/xhtml" ></div>
 <section class="boxLogin container">
-    <div class="content">
+    <div class="content" xmlns:th="http://www.w3.org/1999/xhtml">
 
         <form class="user" action="/logar" method="post">
             <h1><i class="icon icon-key-1"></i> Login</h1>
@@ -12,6 +12,7 @@
                 <label>
                     <input type="password" class="campos" placeholder="Password"  name="password">
                 </label>
+                <div th:if="${erro != null}" th:text="${erro}" class="alert alert-danger" role="alert"></div>
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary" > Login </button>
                 </div>

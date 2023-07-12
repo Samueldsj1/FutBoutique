@@ -27,7 +27,7 @@ public class ProdutoController {
 
     @PostMapping("/cadastrarProduto")
     public String saveProduct(@ModelAttribute("produtoModel") ProdutoModel produtoModel) {
-        produtoService.saveProduct(produtoModel);
+        produtoService.saveProd(produtoModel);
         return "redirect:/produto";
     }
     @GetMapping(value = "/{id}")
@@ -46,7 +46,7 @@ public class ProdutoController {
     public String updateProduct( @PathVariable Integer id, ProdutoModel produtoModel){
         Optional<ProdutoModel> user = produtoService.findById(id);
         if(user.isPresent()){
-            produtoService.saveProduct(produtoModel);
+            produtoService.saveProd(produtoModel);
              return "redirect:/produto";
 
         } else{

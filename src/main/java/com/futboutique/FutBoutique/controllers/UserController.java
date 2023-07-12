@@ -54,16 +54,16 @@ public class UserController {
         Optional<UserModel> user = userService.findById(id);
         if(user.isPresent()){
             userService.save(userModel);
-            return "redirect:/listaUsuario";
+            return "redirect:/usuarios";
         } else{
-            return "redirect:/listaUsuario";
+            return "redirect:/usuarios";
         }
     }
 
     @GetMapping(value = "/delete/{id}")
     public String deleteUserById( @PathVariable Integer id){
         userService.deleteById(id);
-        return "redirect:/listaUsuario";
+        return "redirect:/usuarios";
     }
 
 }
