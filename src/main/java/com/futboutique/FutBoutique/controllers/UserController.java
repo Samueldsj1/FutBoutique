@@ -31,24 +31,22 @@ public class UserController {
         return "login/cadastro";
     }
 
-    @PostMapping(value = "/cadastrar")
+    @PostMapping(value = "/cadastrarUsuario")
     public String saveUser(UserModel userModel){
         userService.save(userModel);
         return "redirect:/usuarios";
     }
 
     @GetMapping(value = "/{id}")
-    public String getUserById( @PathVariable Integer id,Model model){
-        Optional<UserModel> user = userService.findById(id);
-        if(user.isPresent()) {
-            model.addAttribute("user", user.get());
-            return "user/update";
+    public String getUserById (@PathVariable Integer id,Model model){
+        Optional<UserModel> usuario = userService.findById(id);
+        if(usuario.isPresent()) {
+            model.addAttribute("user", usuario.get());
+            return "login/update";
         } else{
             return "redirect:/usuarios";
         }
     }
-
-
     @PostMapping(value = "/alterar/{id}")
     public String updateUser( @PathVariable Integer id, UserModel userModel){
         Optional<UserModel> user = userService.findById(id);

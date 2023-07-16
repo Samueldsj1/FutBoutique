@@ -1,27 +1,33 @@
-<div th:replace="shared/header"  xmlns:th="http://www.w3.org/1999/xhtml"></div>
-<section class="boxLogin container">
-    <div class="content" xmlns:th="http://www.w3.org/1999/xhtml">
-
-        <form class="row g-3" th:action="@{'/usuarios/alterar/' + ${user.id}}" method="post" onsubmit="alert('Alterado com sucesso!')">
-            <h1><i class="icon icon-key-1"></i> Formulario Alteração de Cadastro</h1>
-            <div class="padding">
-                <label>
-                    <input type="text" th:value="$user.name}"  name="name" class="campos" placeholder="Nome Completo">
-                </label>
-                <label>
-                    <input type="text" th:value="$user.cpf}"  name="cpf" class="campos" placeholder="CPF">
-                </label>
-                <label>
-                    <input type="text" th:value="$user.email}"  name="name" class="campos" placeholder="Email">
-                </label>
-                <label>
-                    <input type="text" th:value="$user.password}"  name="name" class="campos" placeholder="Password">
-                </label>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary"> Alterar</button>
+<div th:replace="shared/header" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+<div class="container-fluid" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h1 class="h3 mb-2 text-gray-800">Alterar Usuário</h1>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary" th:text="'Usuário: '+${user.name}"></h6>
+        </div>
+        <div class="card-body">
+            <form class="row g-3" th:action="@{/usuarios/alterar/} + ${user.id}" method="post" onsubmit="alert('Alterado com sucesso!')">
+                <div class="col-md-6">
+                    <label for="nome"  class="form-label">Nome</label>
+                    <input type="text"  th:value="${user.name}" class="form-control" id="nome" name="name" placeholder="Nome Completo">
                 </div>
-            </div>
-        </form>
+                <div class="col-md-6">
+                    <label for="cpf" class="form-label">CPF</label>
+                    <input type="text" th:value="${user.cpf}" class="form-control" id="cpf" name="cpf" placeholder="CPF">
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" th:value="${user.email}" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+                <div class="col-md-6">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="password" th:value="${user.password}" class="form-control" id="senha" name="password" placeholder="Senha">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Alterar</button>
+                </div>
+            </form>
+        </div>
     </div>
-</section>
+</div>
 <div th:replace="shared/footer" xmlns:th="http://www.w3.org/1999/xhtml"></div>

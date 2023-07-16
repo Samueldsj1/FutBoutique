@@ -1,6 +1,5 @@
 package com.futboutique.FutBoutique.Services;
-import com.futboutique.FutBoutique.Models.ProdutoModel;
-import com.futboutique.FutBoutique.Models.UserModel;
+import com.futboutique.FutBoutique.Models.ProductModel;
 import com.futboutique.FutBoutique.Repositories.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,16 +13,16 @@ public class ProdutoService {
     private ProdutoRepository produtoRepository;
 
 
-    public ProdutoModel saveProd(ProdutoModel produtoModel){
-        return produtoRepository.save(produtoModel);
+    public ProductModel saveProduct(ProductModel productModel){
+        return produtoRepository.save(productModel);
     }
 
-    public List<ProdutoModel> findAll(){
+    public List<ProductModel> findAll(){
         return produtoRepository.findAll();
     }
 
 
-    public Optional<ProdutoModel> findById(Integer id){
+    public Optional<ProductModel> findById(Integer id){
         return produtoRepository.findById(id);
     }
 

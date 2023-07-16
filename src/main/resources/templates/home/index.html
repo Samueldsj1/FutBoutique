@@ -1,80 +1,14 @@
-<div th:replace="shared/header" xmlns:th="http://www.w3.org/1999/xhtml"></div>
+<div th:replace="shared/header" xmlns:th="http://www.w3.org/1999/xhtml" ></div>
 
 <main>
     <h4 class="frase-de-efeito">Liberte o verdadeiro torcedor dentro de você - encontre a camisa perfeita na nossa loja
         de camisas de futebol!</h4>
-    <div class="novidades-container">
-        <div class="novidades-list">
+    <div class="novidades-container" xmlns:th="http://www.w3.org/1999/xhtml">
+        <div th:each="homeProduto:${produtos}" class="novidades-list">
             <div class="novidades-item">
-                <img src="/img/corinthians.jpg" alt="Camisa Corinthians">
-                <h3>Camisa Corinthians 22/23</h3>
-                <p><s>- R$ 250,00</s> <span>120,00</span></p>
-                <button type="submit">Comprar</button>
-            </div>
-            <div class="novidades-item">
-                <img src="/img/cr7.jpeg" alt="al nascer">
-                <h3>Camisa Al-Nassr 22/23</h3>
-                <p><s>- R$ 300,00</s> <span>180,00</span></p>
-                <button type="submit">Comprar</button>
-            </div>
-            <div class="novidades-item">
-                <img src="/img/barça.jpeg" alt="Camisa Barcelona">
-                <h3>Camisa Barcelona 22/23</h3>
-                <p><s>- R$ 280,00</s> <span>150,00</span></p>
-                <button type="submit">Comprar</button>
-            </div>
-            <div class="novidades-item">
-                <img src="/img/barca-branco.jpeg" alt="Camisa Barcelona">
-                <h3>Camisa Barcelona 22/23</h3>
-                <p><s>- R$ 250,00</s> <span>120,00</span></p>
-                <button type="submit">Comprar</button>
-            </div>
-            <div class="novidades-item">
-                <img src="/img/flamengo.jpeg" alt="al nascer">
-                <h3>Camisa Flamengo 22/23</h3>
-                <p><s>- R$ 300,00</s> <span>180,00</span></p>
-                <button type="submit">Comprar</button>
-            </div>
-            <div class="novidades-item">
-                <img src="/img/fluminense.jpg" alt="Camisa fluminense">
-                <h3>Camisa Fluminense 22/23</h3>
-                <p><s>- R$ 280,00</s> <span>150,00</span></p>
-                <button type="submit">Comprar</button>
-            </div>
-            <div class="novidades-item">
-                <img src="/img/aik.jpeg" alt="aik">
-                <h3>Camisa Aik Sonina 22/23</h3>
-                <p><s>- R$ 300,00</s> <span>180,00</span></p>
-                <button type="submit">Comprar</button>
-            </div>
-            <div class="novidades-item">
-                <img src="/img/miami.jpg" alt="Camisa miami">
-                <h3>Camisa Inter Miami 22/23</h3>
-                <p><s>- R$ 280,00</s> <span>150,00</span></p>
-                <button type="submit">Comprar</button>
-            </div>
-            <div class="novidades-item">
-                <img src="/img/cor.jpeg" alt="corinthians">
-                <h3>Camisa Corinthians 22/23</h3>
-                <p><s>- R$ 300,00</s> <span>180,00</span></p>
-                <button type="submit">Comprar</button>
-            </div>
-            <div class="novidades-item">
-                <img src="/img/flamengo_vermelho.jpeg" alt="Camisa flamengo_vermelho">
-                <h3>Camisa Flamengo 22/23</h3>
-                <p><s>- R$ 280,00</s> <span>150,00</span></p>
-                <button type="submit">Comprar</button>
-            </div>
-            <div class="novidades-item">
-                <img src="/img/miarosa.jpeg" alt="miami">
-                <h3>Camisa Inter Miami 22/23</h3>
-                <p><s>- R$ 300,00</s> <span>180,00</span></p>
-                <button type="submit">Comprar</button>
-            </div>
-            <div class="novidades-item">
-                <img src="/img/brasil.jpeg" alt="Camisa brasil">
-                <h3>Camisa Brasil Copa 2022</h3>
-                <p><s>- R$ 280,00</s> <span>150,00</span></p>
+                <img th:src="${homeProduto.imagem}"   alt="Camisa Corinthians">
+                <h3 th:text="${homeProduto.description}"></h3>
+                <p><s>- R$ 250,00</s> <span th:src="${homeProduto.price}"></span></p>
                 <button type="submit">Comprar</button>
             </div>
         </div>

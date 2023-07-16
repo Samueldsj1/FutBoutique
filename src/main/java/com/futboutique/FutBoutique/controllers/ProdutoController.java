@@ -1,6 +1,6 @@
 package com.futboutique.FutBoutique.controllers;
 
-import com.futboutique.FutBoutique.Models.ProdutoModel;
+import com.futboutique.FutBoutique.Models.ProductModel;
 import com.futboutique.FutBoutique.Services.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,39 +19,16 @@ public class ProdutoController {
 
     @GetMapping
     public String getAllProduct(Model model) {
-        List<ProdutoModel> Listproduct = produtoService.findAll();
-        model.addAttribute("catalogo", Listproduct);
+        List<ProductModel> Listproduct = produtoService.findAll();
+        model.addAttribute("produtos", Listproduct);
         return "catalogo/listaProduto";
     }
 
 
     @PostMapping("/cadastrarProduto")
-    public String saveProduct(@ModelAttribute("produtoModel") ProdutoModel produtoModel) {
-        produtoService.saveProd(produtoModel);
+    public String saveProduct(@ModelAttribute("produtoModel") ProductModel productModel) {
+        produtoService.saveProduct(productModel);
         return "redirect:/produto";
-    }
-    @GetMapping(value = "/{id}")
-    public String getUserById( @PathVariable Integer id,Model model){
-        Optional<ProdutoModel> produto = produtoService.findById(id);
-        if(produto.isPresent()) {
-            model.addAttribute("produto", produto.get());
-            return "catalogo/update";
-        } else{
-            return "redirect:/produto";
-        }
-    }
-
-
-    @PostMapping(value = "/alterar/{id}")
-    public String updateProduct( @PathVariable Integer id, ProdutoModel produtoModel){
-        Optional<ProdutoModel> user = produtoService.findById(id);
-        if(user.isPresent()){
-            produtoService.saveProd(produtoModel);
-             return "redirect:/produto";
-
-        } else{
-            return "redirect:/produto";
-        }
     }
 
     @GetMapping(value = "/delete/{id}")

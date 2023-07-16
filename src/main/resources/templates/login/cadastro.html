@@ -1,32 +1,33 @@
 <div th:replace="shared/header" xmlns:th="http://www.w3.org/1999/xhtml"></div>
-<section class="boxLogin container">
-    <div class="content">
-
-        <form class="row g-3" action="/usuarios/cadastrar" method="post" onsubmit="alert('Cadastrado com sucesso!')">
-            <h1><i class="icon icon-key-1"></i> Login</h1>
-            <div class="padding">
-                <label>
-                    <input type="text" class="campos" placeholder="Nome: " name="name">
-                </label>
-                <label>
-                    <input type="text" class="campos" placeholder="CPF: " name="cpf">
-                </label>
-                <label>
-                    <input type="text" class="campos" placeholder="E-mail: " name="email">
-                </label>
-                <label>
-                    <input type="password" class="campos" placeholder="Password: "  name="password">
-                </label>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary" > Cadastrar </button>
+<div class="container-fluid" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h1 class="h3 mb-2 text-gray-800">Cadastro Usuário</h1>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Novo Usuário:</h6>
+        </div>
+        <div class="card-body">
+            <form class="row g-3" action="/usuarios/cadastrarUsuario" method="post" onsubmit="alert('Cadastrado com sucesso!')">
+                <div class="col-md-6">
+                    <label for="nome"  class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="name" placeholder="Nome Completo">
                 </div>
-
-            </div>
-            <div class="linksForm">
-                Já tem conta?
-                <a href="/loginUser" class="fade_4S" title="Login"><i class="icon icon-user-add"></i> Fazer Login</a>
-            </div>
-        </form>
+                <div class="col-md-6">
+                    <label for="cpf" class="form-label">CPF</label>
+                    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF">
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email"  class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+                <div class="col-md-6">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="password"  class="form-control" id="senha" name="password" placeholder="Senha">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </div>
+            </form>
+        </div>
     </div>
-</section>
+</div>
 <div th:replace="shared/footer" xmlns:th="http://www.w3.org/1999/xhtml"></div>

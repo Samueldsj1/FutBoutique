@@ -3,10 +3,10 @@
     <section>
         <h2>Camisas</h2>
 
-        <div th:each="produtos:${produto}" class="product" xmlns:th="http://www.w3.org/1999/xhtml">
-            <img th:src="@{${produto.imagem}}" alt="img produto"  height="500px" width="500px"/>
-            <h3 th:text="${produto.description}"></h3>
-            <p><s>- R$ 250,00</s> <span th:text="${produto.price}"></span></p>
+        <div th:each="item:${produtos}" class="product" xmlns:th="http://www.w3.org/1999/xhtml">
+            <img th:src="@{${item.imagem}}" alt="img produto"  height="500px" width="500px"/>
+            <h3 th:text="${item.description}"></h3>
+            <p><s>- R$ 250,00</s> <span th:text="${item.price}"></span></p>
             <button type="submit">Comprar</button>
         </div>
 

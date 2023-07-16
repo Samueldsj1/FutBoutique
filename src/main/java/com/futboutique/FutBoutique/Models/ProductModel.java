@@ -1,13 +1,13 @@
 package com.futboutique.FutBoutique.Models;
 
 import com.sun.istack.NotNull;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "camisa")
-public class ProdutoModel {
+public class ProductModel {
+    public ProductModel(){}
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Integer id;
@@ -29,7 +29,7 @@ public class ProdutoModel {
     @NotNull
     private String imagem;
 
-    public ProdutoModel(){}
+
 
     public Integer getId() {
         return id;
@@ -78,7 +78,6 @@ public class ProdutoModel {
     public void setQtd(Integer qtd) {
         this.qtd = qtd;
     }
-
     public String getImagem() {
         return imagem;
     }
@@ -86,4 +85,5 @@ public class ProdutoModel {
     public void setImagem(String imagem) {
         this.imagem = imagem;
     }
+
 }
